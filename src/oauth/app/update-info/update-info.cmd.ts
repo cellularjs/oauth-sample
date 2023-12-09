@@ -3,7 +3,7 @@ import { AppRepository } from 'oauth/$inner/app.data';
 import { Auth, SignInData } from '$share/auth';
 import { UpdateInfoReq } from './update-info.req';
 import { Forbidden, NotFound } from '$share/msg';
-import { Transactional } from '$share/typeorm';
+import { Transactional } from '@cellularjs/typeorm';
 
 @Auth()
 @Transactional()

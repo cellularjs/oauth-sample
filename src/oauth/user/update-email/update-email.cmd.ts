@@ -1,6 +1,6 @@
 import { Auth, SignInData } from '$share/auth';
 import { NotFound, Unprocessable } from '$share/msg';
-import { Transactional } from '$share/typeorm';
+import { Transactional } from '@cellularjs/typeorm';
 import { Service, ServiceHandler } from '@cellularjs/net';
 import { crypto } from 'oauth/$inner/crypto.helper';
 import { UserRepository } from 'oauth/$inner/user.data';

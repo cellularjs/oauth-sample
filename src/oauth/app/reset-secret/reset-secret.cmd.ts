@@ -1,6 +1,6 @@
 import { Service, ServiceHandler } from '@cellularjs/net';
 import { Auth, SignInData } from '$share/auth';
-import { Transactional } from '$share/typeorm';
+import { Transactional } from '@cellularjs/typeorm';
 import { Forbidden, NotFound, SuccessData } from '$share/msg';
 import { AppRepository } from 'oauth/$inner/app.data';
 import { ResetSecretReq } from './reset-secret.req';

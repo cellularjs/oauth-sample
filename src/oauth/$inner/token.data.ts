@@ -1,5 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, Repository as TypeOrmRepository } from 'typeorm';
-import { Repository } from '$share/typeorm';
+import { Repository } from '@cellularjs/typeorm';
 
 @Entity('oauth_token')
 export class TokenEntity {
@@ -21,5 +21,5 @@ export class TokenEntity {
 
 export interface TokenRepository extends TypeOrmRepository<TokenEntity> { }
 
-@Repository(TokenEntity)
+@Repository({ entity: TokenEntity })
 export class TokenRepository { }

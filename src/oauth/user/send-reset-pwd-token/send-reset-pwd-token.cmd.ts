@@ -1,6 +1,6 @@
 import { Service, ServiceHandler } from '@cellularjs/net';
 import { NotFound, SuccessData } from '$share/msg';
-import { Transactional } from '$share/typeorm';
+import { Transactional } from '@cellularjs/typeorm';
 import { crypto } from 'oauth/$inner/crypto.helper';
 import { UserRepository } from 'oauth/$inner/user.data';
 import { TokenRepository } from 'oauth/$inner/token.data';

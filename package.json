@@ -10,11 +10,12 @@
     "migration:revert": "npm run typeorm -- migration:revert"
   },
   "dependencies": {
-    "@cellularjs/di": "^0.15.2",
-    "@cellularjs/env": "^0.15.2",
-    "@cellularjs/express-proxy": "^0.15.2",
-    "@cellularjs/logger": "^0.15.2",
-    "@cellularjs/net": "^0.15.2",
+    "@cellularjs/di": "^0.18.0",
+    "@cellularjs/env": "^0.18.0",
+    "@cellularjs/express-proxy": "^0.18.0",
+    "@cellularjs/logger": "^0.18.0",
+    "@cellularjs/net": "^0.18.0",
+    "@cellularjs/typeorm": "^0.18.0",
     "@types/multer": "^1.4.7",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",
@@ -27,7 +28,7 @@
     "typeorm": "0.3.11"
   },
   "devDependencies": {
-    "@cellularjs/cli": "^0.15.2",
+    "@cellularjs/cli": "^0.18.0",
     "@types/express": "^4.17.13",
     "@types/node": "^16.11.10"
   }

@@ -1,6 +1,6 @@
 import { Auth, SignInData } from '$share/auth';
 import { NotFound } from '$share/msg';
-import { Transactional } from '$share/typeorm';
+import { Transactional } from '@cellularjs/typeorm';
 import { Service, ServiceHandler } from '@cellularjs/net';
 import { UserRepository } from 'oauth/$inner/user.data';
 import { UserUpdateNameReq } from './update-name.req';

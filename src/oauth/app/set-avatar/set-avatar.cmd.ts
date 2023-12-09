@@ -2,7 +2,7 @@ import * as sharp from 'sharp';
 import * as path from 'path';
 import { Service, ServiceHandler } from '@cellularjs/net';
 import { Auth, SignInData } from '$share/auth';
-import { Transactional } from '$share/typeorm';
+import { Transactional } from '@cellularjs/typeorm';
 import { UserSetAvatarReq } from './set-avatar.req';
 import { Forbidden, NotFound, SuccessData } from '$share/msg';
 import { AppRepository } from 'oauth/$inner/app.data';

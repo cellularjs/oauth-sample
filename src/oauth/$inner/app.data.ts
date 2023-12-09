@@ -1,5 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, Repository as TypeOrmRepository } from 'typeorm';
-import { Repository } from '$share/typeorm';
+import { Repository } from '@cellularjs/typeorm';
 
 @Entity('oauth_app')
 export class AppEntity {
@@ -33,5 +33,5 @@ export class AppEntity {
 
 export interface AppRepository extends TypeOrmRepository<AppEntity> { }
 
-@Repository(AppEntity)
+@Repository({ entity: AppEntity })
 export class AppRepository { }

@@ -1,6 +1,6 @@
 import { AuthModule } from '$share/auth';
 import { env, Env } from '$share/env';
-import { TypeOrmModule } from '$share/typeorm';
+import { TypeOrmModule } from '@cellularjs/typeorm';
 import { Module } from '@cellularjs/di';
 import { EnvModule } from '@cellularjs/env';
 import { getLogger } from '@cellularjs/logger';
@@ -10,7 +10,6 @@ import { getLogger } from '@cellularjs/logger';
     EnvModule.config({ token: Env }),
     AuthModule,
     TypeOrmModule.initialize({
-      name: '',
       type: 'postgres',
       host: env().DB_HOST,
       port: env().DB_PORT,

@@ -1,0 +1,861 @@
+{
+	"info": {
+		"_postman_id": "f174553d-5d9e-4532-94a0-95d81b86d2f5",
+		"name": "Cellular OAuth basic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4192698"
+	},
+	"item": [
+		{
+			"name": "oauth",
+			"item": [
+				{
+					"name": "user",
+					"item": [
+						{
+							"name": "/oauth/user/change-pwd",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"oldPwd\": \"{{MAIN_PWD}}\",\r\n    \"newPwd\": \"{{MAIN_PWD}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/oauth/user/change-pwd",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"oauth",
+										"user",
+										"change-pwd"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/oauth/user/send-reset-pwd-token",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"{{MAIN_EMAIL}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/oauth/user/send-reset-pwd-token",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"oauth",
+										"user",
+										"send-reset-pwd-token"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/oauth/user/reset-pwd",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"token\": \"6e2bd9edcb4709a47c5240b48c0ab6c5a66ddf5b237a84c1318a9bbb091ed6aa\",\r\n    \"nonce\": \"3d205d95-64a2-4476-9ccd-34b4e50f9455\",\r\n    \"newPwd\": \"123@123aA\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/oauth/user/reset-pwd",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"oauth",
+										"user",
+										"reset-pwd"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/oauth/user/my-info",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/oauth/user/my-info",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"oauth",
+										"user",
+										"my-info"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/oauth/user/update-name",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/oauth/user/update-name",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"oauth",
+										"user",
+										"update-name"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/oauth/user/update-email",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"hoangtv2101@gmail.com\",\r\n    \"password\": \"{{MAIN_PWD}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/oauth/user/update-email",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"oauth",
+										"user",
+										"update-email"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/oauth/user/set-avatar",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "avatar",
+											"description": "Max file size: 1MB, Resized file: 400x400px",
+											"type": "file",
+											"src": "/D:/document/how-to-song-lau/32999897818261314-25339433003992293.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{API_URL}}/oauth/user/set-avatar",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"oauth",
+										"user",
+										"set-avatar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/oauth/user/:userId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/oauth/user/:userId",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"oauth",
+										"user",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "4abe58a9-e853-4d09-915f-908b1f8b1097"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/oauth/user/register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Hoàng\",\r\n    \"lastName\": \"Trần\",\r\n    \"email\": \"{{MAIN_EMAIL}}\",\r\n    \"password\": \"{{MAIN_PWD}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/oauth/user/register",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"oauth",
+										"user",
+										"register"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "auth",
+					"item": [
+						{
+							"name": "/oauth/auth/authorize",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const consent = JSON.parse(responseBody)?.data?.consent;\r",
+											"if (consent) {\r",
+											"    postman.setEnvironmentVariable('consent', consent);\r",
+											"}\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{API_URL}}/oauth/auth/authorize?clientId=d601f78b-8039-46c3-9924-b0fb44def789&reresponseType=code&redirectUri=https://test.com/callback&state=xxx&scope=basic",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"oauth",
+										"auth",
+										"authorize"
+									],
+									"query": [
+										{
+											"key": "clientId",
+											"value": "d601f78b-8039-46c3-9924-b0fb44def789"
+										},
+										{
+											"key": "reresponseType",
+											"value": "code",
+											"description": "code | token"
+										},
+										{
+											"key": "redirectUri",
+											"value": "https://test.com/callback"
+										},
+										{
+											"key": "state",
+											"value": "xxx"
+										},
+										{
+											"key": "scope",
+											"value": "basic"
+										},
+										{
+											"key": "codeChallengeMethod",
+											"value": "S256",
+											"description": "S256 (For now, it only support S256)",
+											"disabled": true
+										},
+										{
+											"key": "codeChallenge",
+											"value": "OWY4NmQwODE4ODRjN2Q2NTlhMmZlYWEwYzU1YWQwMTVhM2JmNGYxYjJiMGI4MjJjZDE1ZDZjMTViMGYwMGEwOA",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/oauth/auth/approve",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const authCode = JSON.parse(responseBody)?.data?.code;\r",
+											"if (authCode) {\r",
+											"    postman.setEnvironmentVariable('authCode', authCode);\r",
+											"}\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"consent\": \"{{consent}}\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/oauth/auth/approve",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"oauth",
+										"auth",
+										"approve"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/oauth/auth/grant-access (code grant)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const token = JSON.parse(responseBody)?.data?.accessToken;\r",
+											"if (token) {\r",
+											"    postman.setEnvironmentVariable('token', token);\r",
+											"}\r",
+											"\r",
+											"const refreshToken = JSON.parse(responseBody)?.data?.refreshToken;\r",
+											"if (refreshToken) {\r",
+											"    postman.setEnvironmentVariable('refreshToken', refreshToken);\r",
+											"}\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"grantType\": \"authorization_code\",\r\n    \"clientId\": \"d601f78b-8039-46c3-9924-b0fb44def789\",\r\n    \"clientSecret\": \"de6512a2dcd455c969ebdf770a77ec0d\",\r\n    \"code\": \"{{authCode}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/oauth/auth/grant-access",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"oauth",
+										"auth",
+										"grant-access"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/oauth/auth/grant-access (refresh token grant)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const token = JSON.parse(responseBody)?.data?.accessToken;\r",
+											"if (token) {\r",
+											"    postman.setEnvironmentVariable('token', token);\r",
+											"}\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"grantType\": \"refresh_token\",\r\n    \"clientId\": \"d601f78b-8039-46c3-9924-b0fb44def789\",\r\n    \"clientSecret\": \"de6512a2dcd455c969ebdf770a77ec0d\",\r\n    \"refreshToken\": \"{{refreshToken}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/oauth/auth/grant-access",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"oauth",
+										"auth",
+										"grant-access"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/oauth/auth/grant-access (password grant)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const token = JSON.parse(responseBody)?.data?.accessToken;\r",
+											"if (token) {\r",
+											"    postman.setEnvironmentVariable('token', token);\r",
+											"}\r",
+											"\r",
+											"const refreshToken = JSON.parse(responseBody)?.data?.refreshToken;\r",
+											"if (refreshToken) {\r",
+											"    postman.setEnvironmentVariable('refreshToken', refreshToken);\r",
+											"}\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"grantType\": \"password\",\r\n    \"usr\": \"{{MAIN_EMAIL}}\",\r\n    \"pwd\": \"{{MAIN_PWD}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/oauth/auth/grant-access",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"oauth",
+										"auth",
+										"grant-access"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "app",
+					"item": [
+						{
+							"name": "/oauth/app",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \r\n    \"name\": \"My app\", \r\n    \"desc\": \"This is my app\",\r\n    \"redirectURIs\": [\"https://test.com/callback\"],\r\n    \"website\": \"test.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/oauth/app",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"oauth",
+										"app"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/oauth/app",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/oauth/app",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"oauth",
+										"app"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/oauth/app/:appId",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/oauth/app/:appId",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"oauth",
+										"app",
+										":appId"
+									],
+									"variable": [
+										{
+											"key": "appId",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/oauth/app/:appId",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/oauth/app/:appId",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"oauth",
+										"app",
+										":appId"
+									],
+									"variable": [
+										{
+											"key": "appId",
+											"value": "d601f78b-8039-46c3-9924-b0fb44def789"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/oauth/app/:appId",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \r\n    \"name\": \"My app\", \r\n    \"desc\": \"This is my app\",\r\n    \"redirectURIs\": [\"https://test.com/callback\", \"http://localhost:3001/callback\"],\r\n    \"website\": \"test.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/oauth/app/:appId",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"oauth",
+										"app",
+										":appId"
+									],
+									"variable": [
+										{
+											"key": "appId",
+											"value": "d601f78b-8039-46c3-9924-b0fb44def789"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/oauth/app/:appId/set-avatar",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "logo",
+											"type": "file",
+											"src": "/D:/document/how-to-song-lau/243242647_144716661204185_2491069859094108778_n.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{API_URL}}/oauth/app/:appId/set-avatar",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"oauth",
+										"app",
+										":appId",
+										"set-avatar"
+									],
+									"variable": [
+										{
+											"key": "appId",
+											"value": "d601f78b-8039-46c3-9924-b0fb44def789"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/oauth/app/:appId/reset-secret",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/oauth/app/:appId/reset-secret",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"oauth",
+										"app",
+										":appId",
+										"reset-secret"
+									],
+									"variable": [
+										{
+											"key": "appId",
+											"value": "d601f78b-8039-46c3-9924-b0fb44def789"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

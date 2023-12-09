@@ -1,6 +1,6 @@
 import { CommonModule } from '$share/common';
 import { Cell } from '@cellularjs/net';
-import { TypeOrmModule } from '$share/typeorm';
+import { TypeOrmModule } from '@cellularjs/typeorm';
 import { UserEntity } from './$inner/user.data';
 import { TokenEntity } from './$inner/token.data';
 import { AppEntity } from './$inner/app.data';
@@ -9,11 +9,13 @@ import { AppEntity } from './$inner/app.data';
   providers: ['./'],
   imports: [
     CommonModule,
-    TypeOrmModule.forFeature([
-      UserEntity,
-      TokenEntity,
-      AppEntity,
-    ]),
+    TypeOrmModule.forFeature({
+      entities: [
+        UserEntity,
+        TokenEntity,
+        AppEntity,
+      ],
+    }),
   ],
   listen: './',
 })
