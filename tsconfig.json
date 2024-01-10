@@ -1,23 +1,5 @@
 {
-  "compilerOptions": {
-    "rootDir": "./",
-    "baseUrl": "./src",
-    "sourceMap": true,
-    "removeComments": false,
-    "module": "commonjs",
-    "target": "es2017",
-    "declaration": false,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "types": [
-      "node"
-    ],
-    "lib": [
-      "es7"
-    ],
-    "moduleResolution": "node",
-  },
-  "includes": [
-    "./src/**/*",
-  ]
+  "extends": "@sdks/typescript-config/base.json",
+  "include": ["."],
+  "exclude": ["dist", "build", "node_modules"]
 }

@@ -1,0 +1,41 @@
+{
+  "name": "@app/api-cellularjs",
+  "private": true,
+  "scripts": {
+    "dev": "cellular dev --entry http",
+    "build": "cellular build -e http",
+    "lint": "eslint src/**/*.ts --fix",
+    "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli -d ormconfig.ts",
+    "migration:create": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli migration:create",
+    "migration:run": "npm run typeorm -- migration:run",
+    "migration:revert": "npm run typeorm -- migration:revert"
+  },
+  "installConfig": {
+    "hoistingLimits": "workspaces"
+  },
+  "dependencies": {
+    "@cellularjs/di": "^0.18.0",
+    "@cellularjs/env": "^0.18.0",
+    "@cellularjs/express-proxy": "^0.18.0",
+    "@cellularjs/logger": "^0.18.0",
+    "@cellularjs/net": "^0.18.0",
+    "@cellularjs/typeorm": "^0.18.0",
+    "@types/multer": "^1.4.7",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^9.0.1",
+    "multer": "^1.4.5-lts.1",
+    "pg": "^8.11.1",
+    "sharp": "^0.32.2",
+    "typeorm": "0.3.11"
+  },
+  "devDependencies": {
+    "@cellularjs/cli": "^0.18.0",
+    "@sdks/eslint-config": "*",
+    "@types/express": "^4.17.13",
+    "@types/node": "^16.11.10",
+    "eslint": "^8.53.0"
+  }
+}

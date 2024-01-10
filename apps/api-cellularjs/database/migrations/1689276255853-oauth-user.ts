@@ -1,4 +1,4 @@
-import { MigrationInterface, QueryRunner } from "typeorm"
+import { MigrationInterface, QueryRunner } from 'typeorm';
 
 export class OauthUser1689276255853 implements MigrationInterface {
 
