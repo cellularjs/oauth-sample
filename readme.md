@@ -14,6 +14,6 @@ yarn dev
 ```
 
 ## II. Postman
-Import `Cellular OAuth basic.postman_collection.json`
+Import `docs/1. api/Cellular OAuth basic.postman_collection.json`
 
 ![alt text](https://github.com/cellularjs/oauth-sample/blob/master/imgs/postman.png?raw=true)
